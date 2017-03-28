@@ -17,8 +17,7 @@ public class ExecutorServiceRunnableSample {
 	 * @throws InterruptedException 
 	 */
 	public void executeRunnablesWithExecutor() throws InterruptedException{
-		ExecutorService executorService = Executors.newFixedThreadPool(2);
-		ExecutorService executorService = null;
+		ExecutorService executorService = Executors.newFixedThreadPool(2);		
 		
 		try{		
 			
@@ -44,12 +43,6 @@ public class ExecutorServiceRunnableSample {
 			executorService.shutdown();	
 			executorService.awaitTermination(5, TimeUnit.SECONDS);
 		}		
-		
-		executorService.execute(()->{
-			System.out.println(String.format("starting expensive task thread %s", 
-												Thread.currentThread().getName()));
-			doSomethingExpensive();							
-		});
 	}
 	
 	
